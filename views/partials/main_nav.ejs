@@ -1,21 +1,48 @@
     <header>
-        <div class="uk-position-relative mb-5">
+        <div class="uk-position-relative">
             
 
             
 
             <% if(title == "Home") { %> 
                 <video src="/Assets/videos/welcome.mp4" autoplay loop muted class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover"></video>
-                <% } else { %>
-                    <img src="/Assets/images/Landing.jpg" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover">
-                <% } %>
+            <% } else if(title == "About"){ %>
+                <img src="/Assets/images/Landing.jpg" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover">
+            <% } else if(title == "Projects"){ %>
+                <div class="uk-inline">
+                    <img src="/Assets/images/Projects.jpg" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover">
+                    <div class="uk-overlay uk-overlay-default uk-position-center">
+                        <h1>Projects</h1>
+                    </div>
+                </div> 
+            <% } else { %>
+                
+            <% } %>
 
             <div class="uk-position-top">
-            <nav class="uk-container uk-navbar-container " uk-navbar>
+            <% if(title == "Home") { %> 
+                <nav class="uk-container uk-navbar-container " uk-navbar>
+            <% } else if(title == "About"){ %>
+                <nav class="uk-container uk-navbar-container " uk-navbar>
+            <% } else if(title == "Projects"){ %>
+                <nav class="uk-container uk-navbar-container uk-navbar-transparent uk-light" uk-navbar>
+            <% } else { %>
+                <nav class="uk-container uk-navbar-container " uk-navbar></nav>
+            <% } %>
+            
                     <div class="uk-navbar-left">
                         <ul class="uk-navbar-nav">
-                            <a class="uk-navbar-item uk-logo uk-logo" href="/"><img src="/Assets/images/Logo.png" alt="logo" style="height: 50px; width: 50px;"></a>
-                            
+
+                            <% if(title == "Home") { %> 
+                                <a class="uk-navbar-item uk-logo uk-logo" href="/"><img src="/Assets/images/Logo.png" alt="logo" style="height: 50px; width: 50px;"></a>
+                            <% } else if(title == "About"){ %>
+                                <a class="uk-navbar-item uk-logo uk-logo" href="/"><img src="/Assets/images/Logo.png" alt="logo" style="height: 50px; width: 50px;"></a>
+                            <% } else if(title == "Projects"){ %>
+                                <a class="uk-navbar-item uk-logo uk-logo" href="/"><img src="/Assets/images/Logo1.png" alt="logo" style="height: 50px; width: 50px;"></a>
+                            <% } else { %>
+                                <a class="uk-navbar-item uk-logo uk-logo" href="/"><img src="/Assets/images/Logo.png" alt="logo" style="height: 50px; width: 50px;"></a>
+                            <% } %>
+
                             <% if(title == "Home") { %> 
                             <li class="uk-active">
                             <% } else { %>
@@ -35,7 +62,7 @@
                             <% } %>
                             <a href="/about" class="">
                                 <strong>
-                                <span uk-icon="icon: user;"></span>&nbsp;&nbsp;About Us
+                                <span uk-icon="icon: user;"></span>&nbsp;&nbsp;About
                                 </strong> 
                             </a>
                             </li>
