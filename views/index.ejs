@@ -21,13 +21,14 @@
   <body>
 
       <header>
-        <div class="uk-position-relative">
-          <img src="/Assets/images/Landing.jpg" alt="">
-          <div class="uk-position-top container">
+        <div class="uk-position-relative mb-5">
+          <img src="/Assets/images/Landing.jpg" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover">
+
+          <div class="uk-position-top">
             <nav class="uk-container uk-navbar-container uk-navbar-transparent" uk-navbar>
                   <div class="uk-navbar-left pt-3">
                       <ul class="uk-navbar-nav">
-                          <a class="uk-navbar-item uk-logo" href="/"><img src="/Assets/images/Logo.png" alt="logo" style="height: 72px; width: 72px;"></a>
+                          <a class="uk-navbar-item uk-logo uk-logo" href="/"><img src="/Assets/images/Logo.png" alt="logo" style="height: 50px; width: 50px;"></a>
                           
                           <% if(title == "Home") { %> 
                           <li class="uk-active">
@@ -36,7 +37,7 @@
                           <% } %>
                             <a href="/home" class="">
                               <strong>
-                                <span uk-icon="icon: home; ratio: 2"></span>&nbsp;&nbsp;Home
+                                <span uk-icon="icon: home;"></span>&nbsp;&nbsp;Home
                               </strong> 
                             </a>
                           </li>
@@ -48,7 +49,7 @@
                           <% } %>
                             <a href="/about" class="">
                               <strong>
-                                <span uk-icon="icon: user; ratio: 2"></span>&nbsp;&nbsp;About Us
+                                <span uk-icon="icon: user;"></span>&nbsp;&nbsp;About Us
                               </strong> 
                             </a>
                           </li>
@@ -60,7 +61,7 @@
                           <% } %>
                             <a href="/products" class="">
                               <strong>
-                                <span uk-icon="icon: grid; ratio: 2"></span>&nbsp;&nbsp;Products
+                                <span uk-icon="icon: grid;"></span>&nbsp;&nbsp;Products
                               </strong> 
                             </a>
                           </li>
@@ -72,7 +73,7 @@
                           <% } %>
                             <a href="/services" class="">
                               <strong>
-                                <span uk-icon="icon: database; ratio: 2"></span>&nbsp;&nbsp;Services
+                                <span uk-icon="icon: database;"></span>&nbsp;&nbsp;Services
                               </strong> 
                             </a>
                           </li>
@@ -84,7 +85,7 @@
                           <% } %>
                             <a href="/contact" class="">
                               <strong>
-                                <span uk-icon="icon: phone; ratio: 2"></span>&nbsp;&nbsp;Contact Us
+                                <span uk-icon="icon: phone;"></span>&nbsp;&nbsp;Contact Us
                               </strong> 
                             </a>
                           </li>
@@ -93,13 +94,44 @@
                   </div>
               </nav>
           </div>
-      </div>
-
-
+        </div>
       </header>
 
-      <h1><%= title %></h1>
-      <p>Welcome to the <%= title %> Page</p>
+    <main>
+      <div id="AboutMe" class="uk-container mb-5">
+        <div class="uk-card uk-card-default uk-card-hover">
+          <div>
+            <div class="uk-card-body">
+              <img src="/Assets/images/Logo1.png" alt="" class="mx-auto d-block" style="height: 80px; width: 80px;">
+              <h2 class="text-center">Hi! I'm Erwin Joshua Manuel</h2>
+
+              <p class="text-content">I'm first year first semester student at Centennial College, majoring in Software Engineering. Previously I studied in Asian College of Technology for my Associate in Computer Technlogy Degree. It's been a very long journey but I still find it fun. As you can see, all of this is still a work in progress. If you have any suggestions or advice to make it prettier or to improve the code or whatever aspect, please feel free to contact me. I'll be glad to pay for the your next cup of coffee.</p>
+
+              <h2 class="text-center">Mission Statement</h2>
+              <p class="text-content text-center mb-2">To work hard everyday in building a world that is</p>
+              <h4 class="text-content text-center mt-0"> Good&nbsp;&nbsp;&nbsp;Comfortable&nbsp;&nbsp;&nbsp;Fun </h3>
+
+              <a href="/about">
+                <button class="uk-button uk-button-primary mx-auto d-block mt-5">About Us</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+       <!-- <h1><%= title %></h1>
+       <p>Welcome to the <%= title %> Page</p> -->
+
+
+    </footer>
+      <nav class="navbar navbar-light bg-light ">
+        <a class="navbar-brand uk-container" href="#">&copy; Copyright <%= new Date().getFullYear();%> All Rights Reserved</a>
+      </nav>
+    <footer>
+        
+
 
       <!-- EXTERNAL JS -->
       <!-- JQUERY -->
