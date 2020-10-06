@@ -5,7 +5,7 @@
             
 
             <% if(title == "Home") { %> 
-                <video src="/Assets/videos/welcome.mp4" autoplay loop muted class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover"></video>
+                <video src="/Assets/videos/welcome.mp4" loop muted uk-video="autoplay: inview"> class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover"></video>
             <% } else if(title == "About"){ %>
                 <img src="/Assets/images/Landing.jpg" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover">
             <% } else if(title == "Projects"){ %>
@@ -15,6 +15,8 @@
                         <h1>Projects</h1>
                     </div>
                 </div> 
+            <% } else if(title == "Services"){ %>
+                <img src="/Assets/images/Services.jpg" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover">
             <% } else { %>
                 
             <% } %>
@@ -23,9 +25,11 @@
             <% if(title == "Home") { %> 
                 <nav class="uk-container uk-navbar-container " uk-navbar>
             <% } else if(title == "About"){ %>
-                <nav class="uk-container uk-navbar-container " uk-navbar>
+                <nav class="uk-container uk-navbar-container uk-navbar-transparent" uk-navbar>
             <% } else if(title == "Projects"){ %>
                 <nav class="uk-container uk-navbar-container uk-navbar-transparent uk-light" uk-navbar>
+            <% } else if(title == "Services"){ %>
+                <nav class="uk-container uk-navbar-container uk-navbar-transparent" uk-navbar>
             <% } else { %>
                 <nav class="uk-container uk-navbar-container " uk-navbar></nav>
             <% } %>
