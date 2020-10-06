@@ -1,0 +1,76 @@
+    <header>
+        <div class="uk-position-relative mb-5">
+            <img src="/Assets/images/Landing.jpg" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover">
+
+            <div class="uk-position-top">
+            <nav class="uk-container uk-navbar-container uk-navbar-transparent" uk-navbar>
+                    <div class="uk-navbar-left pt-3">
+                        <ul class="uk-navbar-nav">
+                            <a class="uk-navbar-item uk-logo uk-logo" href="/"><img src="/Assets/images/Logo.png" alt="logo" style="height: 50px; width: 50px;"></a>
+                            
+                            <% if(title == "Home") { %> 
+                            <li class="uk-active">
+                            <% } else { %>
+                            <li class="">
+                            <% } %>
+                            <a href="/home" class="">
+                                <strong>
+                                <span uk-icon="icon: home;"></span>&nbsp;&nbsp;Home
+                                </strong> 
+                            </a>
+                            </li>
+                            
+                            <% if(title == "About Us") { %> 
+                            <li class="uk-active">
+                            <% } else { %>
+                            <li class="">
+                            <% } %>
+                            <a href="/about" class="">
+                                <strong>
+                                <span uk-icon="icon: user;"></span>&nbsp;&nbsp;About Us
+                                </strong> 
+                            </a>
+                            </li>
+
+                            <% if(title == "Products") { %> 
+                            <li class="uk-active">
+                            <% } else { %>
+                            <li class="">
+                            <% } %>
+                            <a href="/products" class="">
+                                <strong>
+                                <span uk-icon="icon: grid;"></span>&nbsp;&nbsp;Products
+                                </strong> 
+                            </a>
+                            </li>
+
+                            <% if(title == "Services") { %> 
+                            <li class="uk-active">
+                            <% } else { %>
+                            <li class="">
+                            <% } %>
+                            <a href="/services" class="">
+                                <strong>
+                                <span uk-icon="icon: database;"></span>&nbsp;&nbsp;Services
+                                </strong> 
+                            </a>
+                            </li>
+
+                            <% if(title == "Contact Us") { %> 
+                            <li class="uk-active">
+                            <% } else { %>
+                            <li class="">
+                            <% } %>
+                            <a href="/contact" class="">
+                                <strong>
+                                <span uk-icon="icon: phone;"></span>&nbsp;&nbsp;Contact Us
+                                </strong> 
+                            </a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>

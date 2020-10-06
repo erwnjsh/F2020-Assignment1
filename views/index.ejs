@@ -1,101 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-        <title><%= title %></title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<%- include partials/header.ejs %> 
 
-        <!-- EXTERNAL CSS -->
-        <!-- BOOTSTRAP -->
-        <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-        <!-- UIKIT -->
-        <link rel="stylesheet" href="/uikit/dist/css/uikit.min.css">
-
-      <!-- GOOGLE FONTS RALEWAY LINK -->
-	    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-        <!-- CUSTOM CSS -->
-        <link rel="stylesheet" href="/Content/app.css" />
-        
-  </head>
-  <body>
-
-      <header>
-        <div class="uk-position-relative mb-5">
-          <img src="/Assets/images/Landing.jpg" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover">
-
-          <div class="uk-position-top">
-            <nav class="uk-container uk-navbar-container uk-navbar-transparent" uk-navbar>
-                  <div class="uk-navbar-left pt-3">
-                      <ul class="uk-navbar-nav">
-                          <a class="uk-navbar-item uk-logo uk-logo" href="/"><img src="/Assets/images/Logo.png" alt="logo" style="height: 50px; width: 50px;"></a>
-                          
-                          <% if(title == "Home") { %> 
-                          <li class="uk-active">
-                          <% } else { %>
-                          <li class="">
-                          <% } %>
-                            <a href="/home" class="">
-                              <strong>
-                                <span uk-icon="icon: home;"></span>&nbsp;&nbsp;Home
-                              </strong> 
-                            </a>
-                          </li>
-                          
-                          <% if(title == "About Us") { %> 
-                          <li class="uk-active">
-                          <% } else { %>
-                          <li class="">
-                          <% } %>
-                            <a href="/about" class="">
-                              <strong>
-                                <span uk-icon="icon: user;"></span>&nbsp;&nbsp;About Us
-                              </strong> 
-                            </a>
-                          </li>
-
-                          <% if(title == "Products") { %> 
-                          <li class="uk-active">
-                          <% } else { %>
-                          <li class="">
-                          <% } %>
-                            <a href="/products" class="">
-                              <strong>
-                                <span uk-icon="icon: grid;"></span>&nbsp;&nbsp;Products
-                              </strong> 
-                            </a>
-                          </li>
-
-                          <% if(title == "Services") { %> 
-                          <li class="uk-active">
-                          <% } else { %>
-                          <li class="">
-                          <% } %>
-                            <a href="/services" class="">
-                              <strong>
-                                <span uk-icon="icon: database;"></span>&nbsp;&nbsp;Services
-                              </strong> 
-                            </a>
-                          </li>
-
-                          <% if(title == "Contact Us") { %> 
-                          <li class="uk-active">
-                          <% } else { %>
-                          <li class="">
-                          <% } %>
-                            <a href="/contact" class="">
-                              <strong>
-                                <span uk-icon="icon: phone;"></span>&nbsp;&nbsp;Contact Us
-                              </strong> 
-                            </a>
-                          </li>
-                      </ul>
-                      
-                  </div>
-              </nav>
-          </div>
-        </div>
-      </header>
+<%- include partials/main_nav.ejs %>      
 
     <main>
       <div id="AboutMe" class="uk-container mb-5">
@@ -124,27 +29,6 @@
        <!-- <h1><%= title %></h1>
        <p>Welcome to the <%= title %> Page</p> -->
 
+<%- include partials/bottom_nav.ejs %>           
 
-    </footer>
-      <nav class="navbar navbar-light bg-light ">
-        <a class="navbar-brand uk-container" href="#">&copy; Copyright <%= new Date().getFullYear();%> All Rights Reserved</a>
-      </nav>
-    <footer>
-        
-
-
-      <!-- EXTERNAL JS -->
-      <!-- JQUERY -->
-      <script src="/jquery/dist/jquery.min.js"></script>
-      <!-- BOOTSTRAP -->
-      <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-      <!-- UIKIT -->
-      <script src="/uikit/dist/js/uikit.min.js"></script>
-      <script src="/uikit/dist/js/uikit-icons.min.js"></script>
-
-      <!-- CUSTOM JS -->
-      <script src="/Scripts/app.js"></script>
-
-  </body>
-</html>
-
+<%- include partials/footer.ejs %>      
