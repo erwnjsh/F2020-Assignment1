@@ -1,10 +1,18 @@
     <header>
         <div class="uk-position-relative mb-5">
-            <img src="/Assets/images/Landing.jpg" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover">
+            
+
+            
+
+            <% if(title == "Home") { %> 
+                <video src="/Assets/videos/welcome.mp4" autoplay loop muted class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover"></video>
+                <% } else { %>
+                    <img src="/Assets/images/Landing.jpg" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover">
+                <% } %>
 
             <div class="uk-position-top">
-            <nav class="uk-container uk-navbar-container uk-navbar-transparent" uk-navbar>
-                    <div class="uk-navbar-left pt-3">
+            <nav class="uk-container uk-navbar-container " uk-navbar>
+                    <div class="uk-navbar-left">
                         <ul class="uk-navbar-nav">
                             <a class="uk-navbar-item uk-logo uk-logo" href="/"><img src="/Assets/images/Logo.png" alt="logo" style="height: 50px; width: 50px;"></a>
                             
@@ -32,14 +40,14 @@
                             </a>
                             </li>
 
-                            <% if(title == "Products") { %> 
+                            <% if(title == "Projects") { %> 
                             <li class="uk-active">
                             <% } else { %>
                             <li class="">
                             <% } %>
-                            <a href="/products" class="">
+                            <a href="/projects" class="">
                                 <strong>
-                                <span uk-icon="icon: grid;"></span>&nbsp;&nbsp;Products
+                                <span uk-icon="icon: grid;"></span>&nbsp;&nbsp;Projects
                                 </strong> 
                             </a>
                             </li>
