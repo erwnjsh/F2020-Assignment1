@@ -3,7 +3,7 @@
             
 
             
-
+            <!-- USED IF TO DYNAMICALLY CHANGE LANDING PAGE -->
             <% if(title == "Home") { %> 
                 <video src="/Assets/videos/welcome.mp4" loop muted uk-video="autoplay: inview" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover"></video>
             <% } else if(title == "About"){ %>
@@ -24,6 +24,7 @@
                 </div>
             <% } %>
 
+            <!-- USED IF TO SET TRANSPARENCY OF NAVBAR -->
             <div class="uk-position-top">
             <% if(title == "Home") { %> 
                 <nav class="uk-container uk-navbar-container " uk-navbar>
@@ -40,6 +41,8 @@
                     <div class="uk-navbar-left">
                         <ul class="uk-navbar-nav">
 
+                            <!-- USED IF TO DYNAMICALLY CHANGE -->
+                            <!-- LOGO BETWEEN LIGHT AND DARK VERSIONS -->
                             <% if(title == "Home") { %> 
                                 <a class="uk-navbar-item uk-logo uk-logo" href="/"><img src="/Assets/images/Logo.png" alt="logo" style="height: 50px; width: 50px;"></a>
                             <% } else if(title == "About"){ %>
@@ -52,6 +55,8 @@
                                 <a class="uk-navbar-item uk-logo uk-logo" href="/"><img src="/Assets/images/Logo.png" alt="logo" style="height: 50px; width: 50px;"></a>
                             <% } %>
 
+                            <!-- USED IF IN THE FOLLOWING SECTIONS -->
+                            <!-- TO SET ACTIVE STATE ON NAVIGATION LINKS -->
                             <% if(title == "Home") { %> 
                             <li class="uk-active">
                             <% } else { %>
