@@ -17,10 +17,16 @@
                 </div> 
             <% } else if(title == "Services"){ %>
                 <img src="/Assets/images/Services.jpg" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover">
-            <% } else { %>
+            <% } else if(title == "Contact"){ %>
                 <video src="/Assets/videos/phone.mp4" loop muted uk-video="autoplay: inview" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover"></video>
                 <div class="uk-overlay uk-overlay-default uk-position-center">
                     <h1>Contact</h1>
+                </div>
+            <% } else { %>
+                <video src="/Assets/videos/error.mp4" loop muted uk-video="autoplay: inview" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover"></video>
+                <div class="uk-overlay uk-overlay-default uk-position-center text-center">
+                    <h1 class="mb-0">Woah!</h1>
+                    <h2 class="mt-0">How did you get here?</h2>
                 </div>
             <% } %>
 

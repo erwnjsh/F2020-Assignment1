@@ -1,3 +1,24 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<%- include partials/header.ejs %> 
+
+<%- include partials/main_nav.ejs %>   
+
+<main>
+      <div id="AboutMe" class="uk-container my-5">
+        <div class="uk-card uk-card-default uk-card-hover">
+          <div>
+            <div class="uk-card-body">
+              <img src="/Assets/images/Logo1.png" alt="" class="mx-auto d-block" style="height: 80px; width: 80px;">
+              <h2 class="text-center">Error <%= error.status %> <%= message %> </h2>
+
+              <pre><%= error.stack %></pre>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+<%- include partials/bottom_nav.ejs %>           
+
+<%- include partials/footer.ejs %>    
