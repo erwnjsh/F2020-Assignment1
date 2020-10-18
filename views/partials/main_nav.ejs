@@ -1,8 +1,6 @@
     <header>
         <div class="uk-position-relative">
             
-
-            
             <!-- USED IF TO DYNAMICALLY CHANGE LANDING PAGE -->
             <% if(title == "Home") { %> 
                 <video src="/Assets/videos/welcome.mp4" loop muted uk-video="autoplay: inview" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover"></video>
@@ -22,12 +20,14 @@
                 <div class="uk-overlay uk-overlay-default uk-position-center">
                     <h1>Contact</h1>
                 </div>
-            <% } else { %>
+            <% } else if(title == "Error") { %>
                 <video src="/Assets/videos/error.mp4" loop muted uk-video="autoplay: inview" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover"></video>
                 <div class="uk-overlay uk-overlay-default uk-position-center text-center">
                     <h1 class="mb-0">Woah!</h1>
                     <h2 class="mt-0">How did you get here?</h2>
                 </div>
+            <% }  else { %>
+                 <img src="/Assets/images/Services.jpg" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} uk-card-hover">
             <% } %>
 
             <!-- USED IF TO SET TRANSPARENCY OF NAVBAR -->
@@ -107,6 +107,18 @@
                             <a href="/services" class="">
                                 <strong>
                                 <span uk-icon="icon: database;"></span>&nbsp;&nbsp;Services
+                                </strong> 
+                            </a>
+                            </li>
+
+                             <% if(title == "Contact List") { %> 
+                            <li class="uk-active">
+                            <% } else { %>
+                            <li class="">
+                            <% } %>
+                            <a href="/contact-list" class="">
+                                <strong>
+                                <span uk-icon="icon: database;"></span>&nbsp;&nbsp;Contact List
                                 </strong> 
                             </a>
                             </li>

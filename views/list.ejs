@@ -1,0 +1,44 @@
+<%- include partials/header.ejs %> 
+
+<%- include partials/main_nav.ejs %>  
+
+<main>
+     
+    <div uk-grid class="my-5">
+        <div class="uk-width-1-6"></div>
+        
+        <div class="uk-width-expand uk-card uk-card-default uk-card-body uk-card-hover">
+            <h1><%= title %></h1> 
+            <!-- START OF TABLE -->
+            <a class="uk-button uk-button-primary " href="#"><span class="uk-margin-small-right" uk-icon="plus-circle"></span> Add a New Contact</a>
+            <table class="uk-table uk-table-hover uk-table-divider">
+                <!-- HEADER ROW -->
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <!-- REPEATABLE TEMPLATE ROW -->
+                <tbody>
+                    <% for(let count = 0; count < ContactList.length; count++ ) { %>
+                    <tr>
+                        <td><%= ContactList[count].Contact_Name %></td>
+                        <td><%= ContactList[count].Contact_Number %></td>
+                        <td><%= ContactList[count].Contact_Email %></td>
+                        <td><a class="uk-button uk-button-primary" href="#"><span class="uk-margin-small-right" uk-icon="pencil"></span>Edit</a></td>
+                        <td><a class="uk-button uk-button-danger" href="#"><span class="uk-margin-small-right" uk-icon="trash"></span>Delete</a></td>
+                    </tr>
+                    <% } %> 
+                </tbody>
+            </table> 
+        </div>
+        
+        <div class="uk-width-1-6"></div>
+    </div> 
+</main>
+
+<%- include partials/bottom_nav.ejs %>           
+
+<%- include partials/footer.ejs %>   
