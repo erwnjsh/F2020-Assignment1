@@ -31,11 +31,7 @@
                 let Message = document.getElementById("Message").value;
 
                 // OUTPUTTING VALUES ON CONSOLE
-                console.info(`First Name     : ${FName}
-                Last Name      : ${LName}
-                Email          : ${Email}
-                Phone Number   : ${TelNum}
-                Message        : ${Message}`);
+                console.info(`First Name     : ${FName}\nLast Name      : ${LName}\nEmail          : ${Email}\nPhone Number   : ${TelNum}\nMessage        : ${Message}`);
 
                 form.reset();
             });
