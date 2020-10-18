@@ -45,6 +45,19 @@
                 }
             });
         }
+
+        let deleteButtons = document.querySelectorAll('.uk-button-danger');
+
+        for(button of deleteButtons)
+        {
+            button.addEventListener('click', (event) => {
+                if(!confirm("Are you sure?"))
+                {
+                    event.preventDefault();
+                    window.location.assign('/contact-list');   //redirects page
+                }
+            });
+        }
     }
 
     window.addEventListener("load", Start);
