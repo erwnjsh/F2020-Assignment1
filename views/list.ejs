@@ -2,15 +2,15 @@
 
 <%- include partials/main_nav.ejs %>  
 
-<main>
+<main >
      
-    <div uk-grid class="my-5">
+    <div uk-grid class="" style="padding-top: 10%; padding-bottom: 5%">
         <div class="uk-width-1-6"></div>
         
         <div class="uk-width-expand uk-card uk-card-default uk-card-body uk-card-hover">
             <h1><%= title %></h1> 
             <!-- START OF TABLE -->
-            <a class="uk-button uk-button-primary " href="#"><span class="uk-margin-small-right" uk-icon="plus-circle"></span> Add a New Contact</a>
+            <a class="uk-button uk-button-primary " href="contact-list/add"><span class="uk-margin-small-right" uk-icon="plus-circle"></span> Add New Contact</a>
             <table class="uk-table uk-table-hover uk-table-divider">
                 <!-- HEADER ROW -->
                 <thead>
@@ -27,14 +27,18 @@
                         <td><%= ContactList[count].Contact_Name %></td>
                         <td><%= ContactList[count].Contact_Number %></td>
                         <td><%= ContactList[count].Contact_Email %></td>
-                        <td><a class="uk-button uk-button-primary" href="#"><span class="uk-margin-small-right" uk-icon="pencil"></span>Edit</a></td>
-                        <td><a class="uk-button uk-button-danger" href="#"><span class="uk-margin-small-right" uk-icon="trash"></span>Delete</a></td>
+                        <td>
+                            <a class="uk-button uk-button-primary" href="/contact-list/edit/<%= ContactList[count]._id %>"><span class="uk-margin-small-right" uk-icon="pencil"></span>Edit</a>
+                            </td>
+                        <td>
+                            <a class="uk-button uk-button-danger" href="/contact-list/delete/<%= ContactList[count]._id %>"><span class="uk-margin-small-right" uk-icon="trash"></span>Delete</a>
+                        </td>
                     </tr>
                     <% } %> 
                 </tbody>
             </table> 
         </div>
-        
+
         <div class="uk-width-1-6"></div>
     </div> 
 </main>
