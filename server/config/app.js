@@ -4,6 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//MODULES FOR AUTHENTICATION
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
+
+//ROUTING
 var indexRouter = require('../routes/index');
 var usersRouter = require('../routes/users');
 let booksRouter = require('../routes/contact');
@@ -33,6 +41,33 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
+
+//SETUP EXPRESS SESSION
+app.use(session({
+  secret: "SomeSecret",
+  saveUninitialized: false,
+  resave: false
+}));
+
+// INITIALIZE FLASH
+app.use(flash());
+
+//INITIALIZE PASSPORT
+app.use(passport.initialize());
+app.use(passport.session());
+
+//PASSPORT USER CONFIGURATION
+
+//CREATE A USER MODEL INSTANCE
+let userModel = require('../models/user');
+let User = userModel.User;
+
+//IMPLEMENT A USER AUTHENTICATION STRATEGY
+passport.use(User.createStrategy());
+
+//SERIALIZE AND DESERIALIZE THE USER INFO
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

@@ -2,11 +2,24 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
+let passport = require('passport');
+
 //CONNECT TO CONTACT MODEL
 let Contact = require('../models/contact');
 
 //CONNECT TO CONTROLLER
 let bookController = require('../controllers/contact');
+
+// helper function for guard purpose
+function requireAuth(req, res, next)
+{
+    // check if the user is logged in
+    if(!req.isAuthenticated())
+    {
+        return res.redirect('/login');
+    }
+    next(); // a way to maintain a state as we move from to the next
+}
 
 /* GET ROUTE FOR THE CONTACTS LIST PAGE - READ OPERATION */
 router.get('/', bookController.displayContactList);
@@ -27,5 +40,3 @@ router.post('/edit/:id', bookController.processEditPage);
 router.get('/delete/:id', bookController.performDelete);
 
 module.exports = router;
-
-// adsfa
