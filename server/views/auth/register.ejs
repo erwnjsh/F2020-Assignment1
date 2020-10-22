@@ -3,7 +3,7 @@
 <%- include ../partials/main_nav.ejs %>  
 
     <main>
-        <!-- MESSAGE AREA -->
+       
         
 
         <div class="uk-container" style="padding-top: 10%; padding-bottom: 5%;">
@@ -11,6 +11,7 @@
               <div>
                 <div class="uk-card-body">
 
+                 <!-- MESSAGE AREA -->
                 <% if(messages.length > 0) { %>
                     <div class="uk-alert-danger" uk-alert>
                         <a class="uk-alert-close" uk-close></a>
@@ -38,6 +39,22 @@
                             <label class="uk-form-label uk-text-large" for="password">Password</label>
                             <div class="uk-form-controls">
                                 <input class="uk-form-large " id="password" type="password" placeholder="Password" name="password" required>
+                            </div>
+                        </div>
+
+                        <!-- EMAIL -->
+                         <div class="mb-3">
+                            <label class="uk-form-label uk-text-large" for="email">email</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-form-large " id="email" type="email" placeholder="Password" name="email" required>
+                            </div>
+                        </div>
+
+                        <!-- displayName -->
+                         <div class="mb-3">
+                            <label class="uk-form-label uk-text-large" for="displayName">displayName</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-form-large " id="displayName" type="displayName" placeholder="Password" name="displayName" required>
                             </div>
                         </div>
     

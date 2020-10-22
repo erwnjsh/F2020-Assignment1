@@ -1,4 +1,4 @@
 module.exports = 
 {
-    "URI" : "mongodb://localhost/contacts"
+    "URI" : "mongodb://localhost/personal_site"
 }

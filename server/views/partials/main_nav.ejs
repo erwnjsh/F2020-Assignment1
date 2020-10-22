@@ -111,7 +111,7 @@
                             </a>
                             </li>
 
-                             <% if(title == "Contact List") { %> 
+                            <!-- <% if(title == "Contact List") { %> 
                             <li class="uk-active">
                             <% } else { %>
                             <li class="">
@@ -121,7 +121,23 @@
                                 <span uk-icon="icon: list;"></span>&nbsp;&nbsp;Contact List
                                 </strong> 
                             </a>
-                            </li>
+                            </li> -->
+                            
+                             <% if(typeof displayName == 'string' && displayName) { %> 
+                                <% if(title == "Contact List") { %> 
+                                    <li class="uk-active">
+                                <% } else { %>
+                                    <li class="">
+                                <% } %>
+                                        <a href="/contact-list" class="">
+                                            <strong>
+                                            <span uk-icon="icon: list;"></span>&nbsp;&nbsp;Contact List
+                                            </strong> 
+                                        </a>
+                                    </li>
+                            <% }  else { %>
+                                
+                            <% } %>
 
                             <% if(title == "Contact") { %> 
                             <li class="uk-active">
@@ -134,6 +150,32 @@
                                 </strong> 
                             </a>
                             </li>
+
+                            <% if(typeof displayName == 'string' && displayName) { %> 
+                                <li>
+                                    <a href="/">
+                                        <strong>
+                                            Welcome, <%= displayName %>
+                                        </strong> 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/logout" class="">
+                                        <strong>
+                                        <span uk-icon="icon: sign-out;"></span>&nbsp;&nbsp;Logout %>
+                                        </strong> 
+                                    </a>
+                                </li>
+                            <% }  else { %>
+                                <li>
+                                    <a href="/login" class="">
+                                        <strong>
+                                        <span uk-icon="icon: sign-in;"></span>&nbsp;&nbsp;Login
+                                        </strong> 
+                                    </a>
+                                </li>
+                            <% } %>
+
                         </ul>
                         
                     </div>
