@@ -2,7 +2,7 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-//create a reference to the model
+//CREATE A REFERENCE TO THE MODEL
 let Contact = require('../models/contact');
 
 module.exports.displayContactList = (req, res, next) => {

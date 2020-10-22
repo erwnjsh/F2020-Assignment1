@@ -123,6 +123,7 @@
                             </a>
                             </li> -->
                             
+                            <!-- CONDITIONAL DISPLAY FOR CONTACT LIST -->
                              <% if(typeof displayName == 'string' && displayName) { %> 
                                 <% if(title == "Contact List") { %> 
                                     <li class="uk-active">
@@ -151,13 +152,14 @@
                             </a>
                             </li>
 
+                            <!-- CONDIITONAL DISPLAY FOR LOGIN/OUT AND DISPLAYNAME -->
                             <% if(typeof displayName == 'string' && displayName) { %> 
                                 <li>
-                                    <a href="/">
+                                    <div class="uk-navbar-item uk-text-uppercase">
                                         <strong>
                                             Welcome, <%= displayName %>
                                         </strong> 
-                                    </a>
+                                    </div>
                                 </li>
                                 <li>
                                     <a href="/logout" class="">

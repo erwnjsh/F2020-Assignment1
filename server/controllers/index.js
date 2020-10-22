@@ -28,7 +28,7 @@ module.exports.displayContactPage = (req, res, next) => {
 }
 
 module.exports.displayLoginPage = (req, res, next) => {
-    //check if the user is already logged in
+    // CHECK IF THE USER IS ALREADY LOGGED IN 
     if(!req.user)
     {
         res.render('auth/login',
@@ -47,19 +47,19 @@ module.exports.displayLoginPage = (req, res, next) => {
 module.exports.processLoginPage = (req, res, next) => {
     passport.authenticate('local', 
     (err, user, info) => {
-        //server err?
+        //CHECKS TO SEE IF THERE IS A SERVER ERROR
         if(err)
         {
             return next(err);
         }
-        //is there a user login error?
+        //IS THERE A USER ERROR?
         if(!user)
         {
             req.flash('loginMessage', 'Authentication Error');
             return res.redirect('/login');
         }
         req.login(user, (err) => {
-            //server err?
+            //ANOTHER SERVER ERROR?
             if(err)
             {
                 return next(err);
@@ -86,6 +86,9 @@ module.exports.displayRegisterPage = (req, res, next) =>{
     }
 }
 
+/*
+    BEGIN SECTION: TO DISPLAY AND PROCESS TEMPORARY REGISTER PAGE
+*/
 // module.exports.processRegisterPage = (req, res, next) => {
 //     // instanciate a user object 
 //     let newUser = new User({
@@ -131,6 +134,9 @@ module.exports.displayRegisterPage = (req, res, next) =>{
 //         }
 //     });
 // }
+/*
+    END SECTION: TO DISPLAY AND PROCESS TEMPORARY REGISTER PAGE
+*/
 
 module.exports.performLogout = (req, res, next) => {
     req.logout();

@@ -10,7 +10,7 @@ let Contact = require('../models/contact');
 //CONNECT TO CONTROLLER
 let contactController = require('../controllers/contact');
 
-// helper function for guard purpose
+// helper function for guard purposes
 function requireAuth(req, res, next)
 {
     // check if the user is logged in

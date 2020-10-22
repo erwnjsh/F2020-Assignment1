@@ -27,11 +27,19 @@ router.get('/login', indexController.displayLoginPage);
 /* POST Route for processing the Login Page */
 router.post('/login', indexController.processLoginPage);
 
+
+
+/* BEGIN SECTION: TEMPORARY REGISTRATION PAGE ROUTES */
+
 /* GET Route for DISPLAYING Registration Page */
 // router.get('/register', indexController.displayRegisterPage);
 
 /* POST Route for PROCESSING Registration Page */
 // router.post('/register', indexController.processRegisterPage);
+
+/* END SECTION: TEMPORARY REGISTRATION PAGE ROUTES */
+
+
 
 // /* GET to perform UserLogout */
 router.get('/logout', indexController.performLogout);
